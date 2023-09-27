@@ -1,0 +1,83 @@
+﻿@model PromoCode
+@{
+    ViewData["title"] = "İş ilanları";
+}
+<div class="mb-3">
+    <label class="form-label"></label>
+    <div class="card container">
+        <div class="card-body">
+            <h2>
+                @ViewData["title"]
+            </h2>
+
+            <div class="row">
+                <div class="col-12 col-md-3 border-end">
+                    <div class="nav flex-column">
+                    </div>
+                    <div>
+                        <form method="post">
+                            <a asp-action="Code" readonly>
+                                <i class="bi bi-plus"></i>
+                                <button class="btn btn-primary ms-auto" type="submit">Kod Üret</button>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div class="table-responsive">
+                        <div class="table-wrapper">
+                            <div class="table-scroll">
+                                <table class="datatable table table-striped table-bordered">
+                                    <!-- Tablo içeriği buraya gelecek -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_DataTablesPartial" />
+    <script>
+        $(() => {
+            const dt = createDatatable('/admin/promocodes/tabledata', [
+                { title: 'Kod', data: 'code' },
+                { title: 'durumu', data: 'enabled' },
+                { title: 'Kullanıcı', data: 'codeUserName' },
+        
+            ], () => {
+                $('.remove-btn').on('click', (evt) => {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'UYARI!',
+                        html: 'Emin misiniz?',
+                        showCancelButton: true,
+                        cancelButtonText: 'İptal',
+                        confirmButtonText: 'Sil'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location = $(evt.currentTarget).attr('href');
+                        }
+                    });
+                    return false;
+                });
+            });
+        });
+    </script>
+    <style>
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .table-scroll {
+            max-height: 400px; /* İhtiyaç duyduğunuz yüksekliği burada ayarlayabilirsiniz */
+            overflow-y: auto;
+        }
+
+        /* Responsive Stiller */
+      
+    </style>
+}

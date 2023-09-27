@@ -1,0 +1,325 @@
+﻿@model StundentLoginViewModel
+@{
+    
+}
+<main id="main">
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative text-success " data-aos="zoom-in" data-aos-delay="100">
+
+
+        <h1>SMART MEMORY AKADEMİ<br></h1>
+        <h2>"İngilizce Öğrenmenin En Etkili Yolu"</h2>
+        <a asp-controller="Account" asp-action="Register" class="btn-get-started">Kayıt Ol</a>
+
+
+    </div>
+</section><!-- End Hero -->
+<section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                        <img src="~/mentor/assets/img/about.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <body>
+                    <div class="card text-bg-success mb-3 raunded" 18rem;">
+                        <div class="card-header">
+                            <div class="text-center">
+                                <i class="fa fa-user fa-4x"></i>
+                                <h4>Kullanıcı Girişi</h4>
+                            </div>
+                            @if (!ViewData.ModelState.IsValid)
+                            {
+                                <div class="alert alert-danger" asp-validation-summary="All"></div>
+                            }
+                            <hr />
+                            <div class="card-body">
+                                <form method="post">
+                                    <div class="mb-3">
+                                        <label asp-for="UserName" class="form-label"></label>
+                                        <input class="form-control" asp-for="UserName">
+                                        <span asp-validation-for="UserName"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Password" class="form-label"></label>
+                                        <input class="form-control" asp-for="Password">
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="IsPersistent">
+                                        <label class="form-check-label" asp-for="IsPersistent"></label>
+                                    </div>
+                                    <button type="submit" class="get-started-btn">Giriş</button>
+                                </form>
+                                    <hr />
+                                    <div class="text-nowrap">
+                                        <a asp-controller="Account" asp-action="ResetPassword">Şifremi Unuttum</a>
+                                       
+                                        
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+                    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                    <partial name="_ValidationScriptsPartial" />
+                </body>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+<section id="counts" class="counts section-bg">
+    <div class="container">
+
+        <div class="row counters">
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="38762" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Öğrenci Sayısı</p>
+            </div>
+
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Ders</p>
+            </div>
+
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Uykuda İngilizce</p>
+            </div>
+
+             <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Meditasyon</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Okuma Parçası</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Dünyadan Gazeteler</p>
+            </div>
+             <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="170" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Üniversite</p>
+            </div>
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="1840" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Kurum & Kuruluş</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                    <h3>İngilizce Öğrenmek Artık Çok Kolay</h3>
+                    <p>
+                       İstediğiniz yerde istediğiniz zaman ingilizce öğrenebilirsiniz. Video dersler, okuma parçalarından oluşan uykuda ingilizce ve
+                       bilinç altı kurgulama tekniği... Hepsi tek ekranda!
+                    </p>
+                    <div class="text-center">
+                        <a asp-controller="Account" asp-action="Register" class="more-btn">Kayıt Ol <i class="bx bx-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-receipt"></i>
+                                <h4>İstediğin Yerde Öğrenmeye Başla</h4>
+                                <p>Smart Memory Akademi Eğitimlerini istediğiniz zaman istediğiniz yerde kullanmaya başlayabilirsiniz.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>En İyisinden Öğren </h4>
+                                <p>Smart Memory Akademi Size en iyi video, meditasyon ve uykuda ingilizce sunar.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-images"></i>
+                                <h4>Her Yerden Erişim</h4>
+                                <p>Bir kere kayıt olduğunuz zaman cep telefonu, bilgisayar ve tablet gibi akıllı cihazlar üzerinden erişim sağlayabileceğinz içerikler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End .content-->
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Why Us Section -->
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color:green;"></i>
+                    <h3><a >Video Dersler</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Uykuda İngilizce</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a >Meditasyon</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a >Okuma Parçaları</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Dünyadan Gazeteler</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Çeviri</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Görsel Hafıza</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a >Duysal Hafıza</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Bilinç Altı Kurgulama Tekniği</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a >Etkileşim</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Hafıza Yöntemi</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="bi bi-info-circle-fill" style="color: green;"></i>
+                    <h3><a>Her Yerden Erişim</a></h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Features Section -->
+<section id="popular-courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>İÇERİKLER</h2>
+            <p>EĞİTİMLER</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="course-item">
+                    <img src="~/mentor/assets/img/videoders.png" class="img-fluid" alt="...">
+                    <div class="course-content">
+                       
+
+                        <h3><a >Video Dersler</a></h3>
+                        <p>Görsel ve duysal hafıza teknikleri ile hazırlanan eğitimler ile ingilizce öğrenin!</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+                           
+                            <div class="trainer-rank d-flex align-items-center">
+                                <i class="bx bx-user"></i>&nbsp;20k
+                                &nbsp;&nbsp;
+                                <i class="bx bx-heart"></i>&nbsp;1875
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="course-item">
+                    <img src="~/mentor/assets/img/97804090_m-2.jpg" class="img-fluid" alt="...">
+                    <div class="course-content">
+                        
+
+                        <h3><a>Uykuda İngilizce</a></h3>
+                        <p>Kendi İstirat ortmanınızda dilediğiniz yerde ve dilediğiniz zaman da katılabileceğiniz uykuda ingilizce metodu!</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+                           
+                            <div class="trainer-rank d-flex align-items-center">
+                                <i class="bx bx-user"></i>&nbsp;10k
+                                &nbsp;&nbsp;
+                                <i class="bx bx-heart"></i>&nbsp;751
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="course-item">
+                    <img src="~/mentor/assets/img/course33.jpg" class="img-fluid" alt="...">
+                    <div class="course-content">
+                        
+
+                        <h3><a>Meditasyon</a></h3>
+                        <p>Uykuya geçiş aşamasında ve uyku esnasında bilinç altı kurgulama tekniği ile öğrenme metodu! </p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+                           
+                            <div class="trainer-rank d-flex align-items-center">
+                                <i class="bx bx-user"></i>&nbsp;7k
+                                &nbsp;&nbsp;
+                                <i class="bx bx-heart"></i>&nbsp;665
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+
+        </div>
+
+    </div>
+</section><!-- End Popular Courses Section -->
+</main>
